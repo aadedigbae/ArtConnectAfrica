@@ -1,1 +1,1 @@
-Menu Driven Artwork Application
+Menu Driven Artwork  Application
