@@ -92,3 +92,50 @@ def delete_account():
     else:
         print("You are not signed in.")
 
+# Main loop
+while True:
+    print("\nWelcome to the Artwork App!")
+    print("1. Sign Up")
+    print("2. Sign In")
+    print("3. Quit")
+    choice = input("Enter your choice: ")
+
+    if choice == "1":
+        signup()
+    elif choice == "2":
+        if signin():
+            while True:
+                print("\nMain Menu:")
+                print("1. See List of Artworks")
+                print("2. Upload Another Artwork")
+                print("3. Search Artworks")
+                print("4. View Profile")
+                print("5. Delete Account")
+                print("6. Sign Out")
+                print("7. Quit")
+                inner_choice = input("Enter your choice: ")
+
+                if inner_choice == "1":
+                    show_artworks()
+                elif inner_choice == "2":
+                    upload_artwork()
+                elif inner_choice == "3":
+                    search_artworks()
+                elif inner_choice == "4":
+                    view_profile()
+                elif inner_choice == "5":
+                    delete_account()
+                elif inner_choice == "6":
+                    sign_out()
+		elif inner_choice == "7":
+                    print("Goodbye!")
+                    quit()
+                else:
+                    print("Invalid choice. Please select again.")
+        else:
+            continue
+    elif choice == "3":
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid choice. Please select again.")
