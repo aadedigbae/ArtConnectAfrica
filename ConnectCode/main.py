@@ -39,3 +39,22 @@ def show_artworks():
     print("\nSee List of Artworks below:")
     for idx, artwork in enumerate(artworks, start=1):
         print("{0}. File Name:{1} \n File Description:{2} \n Region:{3}".format(idx, artwork['file_name'], artwork['file_description'], artwork['region']))
+
+#Function to upload artwork
+def upload_artwork():
+    file_name = input("Enter file name: ")
+    file_description = input("Enter file description: ")
+    region = input("Enter region of Artwork: ")
+    artworks.append({"file_name": file_name, "file_description": file_description, "region": region})
+    print("Artwork uploaded successfully!")
+
+#Function to search artworks
+def search_artworks():
+    search_term = input("Enter file name or region to search: ")
+    search_results = [artwork for artwork in artworks if search_term.lower() in artwork['file_name'].lower() or search_term.lower() in artwork['region'].lower()]
+    if search_results:
+        print("\nSearch Results:")
+        for idx, artwork in enumerate(search_results, start=1):
+            print("{0}. File Name:{1} \n File Description:{2} \n Region:{3}".format(idx, artwork['file_name'], artwork['file_description'], artwork['region']))
+    else:
+        print("The '{0}' does not exist. Pls, try again".format(search_term))
