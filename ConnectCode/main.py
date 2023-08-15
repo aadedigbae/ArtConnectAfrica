@@ -20,3 +20,22 @@ def signup():
         users[email] = {"fullname": fullname, "password": password}
         print("Signup successful!")
 
+#Function to handle user signin
+def signin():
+    global current_user_email
+    email = input("Enter your email: ")
+    password = input("Enter your password: ")
+
+    if email in users and users[email]["password"] == password:
+        print("Signin successful!")
+        current_user_email = email
+        return True
+    else:
+        print("Invalid credentials. Please try again")
+        return False
+
+#Function to display list of artworks
+def show_artworks():
+    print("\nSee List of Artworks below:")
+    for idx, artwork in enumerate(artworks, start=1):
+        print("{0}. File Name:{1} \n File Description:{2} \n Region:{3}".format(idx, artwork['file_name'], artwork['file_description'], artwork['region']))
