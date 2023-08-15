@@ -59,7 +59,7 @@ def search_artworks():
     else:
         print("The '{0}' does not exist. Pls, try again".format(search_term))
 
-# Function to view profile
+#Function to view profile
 def view_profile():
     if current_user_email:
         print("\nYour Profile:")
@@ -68,7 +68,7 @@ def view_profile():
     else:
         print("You are not signed in.")
 
-# Function to sign out
+#Function to sign out
 def sign_out():
     global current_user_email
     choice = input("Are you sure you want to sign out? (yes/no): ")
@@ -78,7 +78,7 @@ def sign_out():
     else:
         print("Sign out cancelled.")
 
-# Function to delete account
+#Function to delete account
 def delete_account():
     global current_user_email
     if current_user_email:
