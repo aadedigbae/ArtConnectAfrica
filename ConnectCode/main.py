@@ -58,3 +58,37 @@ def search_artworks():
             print("{0}. File Name:{1} \n File Description:{2} \n Region:{3}".format(idx, artwork['file_name'], artwork['file_description'], artwork['region']))
     else:
         print("The '{0}' does not exist. Pls, try again".format(search_term))
+
+# Function to view profile
+def view_profile():
+    if current_user_email:
+        print("\nYour Profile:")
+        print("Full Name:", users[current_user_email]["fullname"])
+        print("Email:", current_user_email)
+    else:
+        print("You are not signed in.")
+
+# Function to sign out
+def sign_out():
+    global current_user_email
+    choice = input("Are you sure you want to sign out? (yes/no): ")
+    if choice.lower() == "yes":
+        print("Signed out successfully.")
+        current_user_email = None
+    else:
+        print("Sign out cancelled.")
+
+# Function to delete account
+def delete_account():
+    global current_user_email
+    if current_user_email:
+        choice = input("Are you sure you want to delete your account? (yes/no): ")
+        if choice.lower() == "yes":
+            del users[current_user_email]
+            print("Account deleted successfully.")
+            current_user_email = None
+        else:
+            print("Account deletion cancelled.")
+    else:
+        print("You are not signed in.")
+
