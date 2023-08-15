@@ -127,7 +127,7 @@ while True:
                     delete_account()
                 elif inner_choice == "6":
                     sign_out()
-		elif inner_choice == "7":
+                elif inner_choice == "7":
                     print("Goodbye!")
                     quit()
                 else:
